@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+<div class="container">
+    <h1 id="main-heading">Blog</h1>
+<% posts.forEach((post) => { %>
+    <div class="card" style="margin-bottom: 20px;">
+        <div class="card-header">
+          <%=post.date%>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%=post.title%></h5>
+          <p class="card-text"><%-post.content.substring(0, 200) + "..."%></p>
+          <a href="/<%=post._id%>" class="btn btn-primary">Read more...</a>
+        </div>
+      </div>
+<% }); %>
+</div>
+<%- include("partials/footer") -%> 
